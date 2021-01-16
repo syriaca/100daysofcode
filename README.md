@@ -1,7 +1,6 @@
 # 100daysofcode
 
-## DAY-01 - 16-01-2021: Word Comparaison
-https://github.com/syriaca/100daysofcode/tree/day-01-word-comparaison
+## [DAY-01 - 16-01-2021: Word Comparaison](https://github.com/syriaca/100daysofcode/tree/day-01-word-comparaison)
 -   Vanilla JS
 -   Tailwind
 
