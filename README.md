@@ -1,6 +1,6 @@
 # 100daysofcode
 
-## 16-01-2021: Word Comparaison
+## DAY-01 - 16-01-2021: Word Comparaison
 
 -   Vanilla J
 -   Tailwind
