@@ -2,33 +2,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day-01 - Word Comparaison</title>
+    <title>Day-02 - Chunky Monkey</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css"/>
 </head>
 <body>
     <div class="m-10">
         <h1 class="text-2xl text-gray-80 font-serif font-black">
-            Basic Algorithm Scripting: <span class="text-gray-40 font-medium">Mutations</span>
+            100 Days of code
         </h1>
+        <h2 class="text-xl text-gray-40 font-serif font-medium">
+            <strong>Day#02</strong>: Chunky Monkey
+        </h2>
         <hr class="my-5" />
-        <p class="mb-5">
-            Return <strong>true</strong> if the string in the first element of the array contains all of the letters of the
-            string in the second element of the array.
+        <p class="mb-5 w-96">
+            Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them
+            as a two-dimensional array.
         </p>
-        <form class="word-form my-5">
-            <label class="font-bold mb-2 inline-block" for="firstWord">
-                Enter first word in array
+        <form class="form my-5">
+            <label class="font-bold mb-2 inline-block w-68" for="test">
+                Enter values separated by a comma (,) <br /> <span class="font-medium text-sm">(it will be the array of reference)</span>
             </label>
-            <input id="firstWord" class="block border-2 border-gray-400 rounded p-2 mb-5" type="text" name="firstWord"
-                value="" placeholder="your first word" required />
+            <input id="test" class="block border-2 border-gray-400 rounded p-2 mb-5" type="text" name="test"
+                value="" placeholder="your array"  />
     
-            <label class="font-bold mb-2 inline-block" for="secondWord">
-                Enter Second word in array
+            <label class="font-bold mb-2 inline-block" for="chunkSize">
+                Enter size of each chunk !
+                <br /> <span class="font-medium text-sm">(it must be a positive number)</span>
             </label>
-            <input id="secondWord" class="block border-2 border-gray-400 border-radius rounded p-2 mb-5" type="text"
-                name="secondWord" value="" placeholder="your second word" required />
+            <input id="chunkSize" class="block border-2 border-gray-400 border-radius rounded p-2 mb-5" type="number"
+                name="chunkSize" value="2" min="2" max="100" placeholder="your chunk size"  />
             <button class="w-55 rounded p-4 bg-green-400 text-white" type="submit">
-                Get the result
+                Chunk it !
             </button>
         </form>
         <div class="result hidden"></div>
