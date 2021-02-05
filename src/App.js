@@ -1,14 +1,26 @@
-import React from 'react';
+import useFetch from './hook/useFetch';
 
 function App() {
+  
+  const { isLoading, data: images } = useFetch("https://api.unsplash.com/photos/?client_id=HDwEvLJFQ05fBZsTCwb-V7hQFlXRS8OF-8JxdSpWLDQ&page=1&per_page=6");
+
   return (
-        // <div className="panel" style="background-image: url('https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')">
-        //   <h3>Wild Forest</h3>
-        // </div>
       <div className="container">
         <div className="panel active">
-          <h3>Explore The World</h3>
-        </div>
+        {isLoading && <div>Is Loading...</div>}
+        {images && images.map(image => {
+            return (
+              <div
+                className="panel"
+                key={image.id}
+                style={{ backgroundImage: `url(${image.urls.small})` }}>
+                <h3>
+                  {image.alt_description}
+                </h3>
+              </div>
+            )}
+          )}
+      </div>        
     </div>
   );
 }
