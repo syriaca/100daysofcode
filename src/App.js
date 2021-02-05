@@ -6,7 +6,6 @@ function App() {
 
   return (
       <div className="container">
-        <div className="panel active">
         {isLoading && <div>Is Loading...</div>}
         {images && images.map(image => {
             return (
@@ -21,7 +20,6 @@ function App() {
             )}
           )}
       </div>        
-    </div>
   );
 }
 
