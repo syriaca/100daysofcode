@@ -61,7 +61,7 @@ const Panel = ({ id, url, heading, isActive, toggleActive }) => {
 Panel.propTypes = {
     id: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
-    heading: PropTypes.string.isRequired
+    heading: PropTypes.string
 };
 
 export default Panel;
