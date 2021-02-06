@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React from 'react';
+import React, { forwardRef }from 'react';
 import PropTypes from 'prop-types';
 
 const StyledPanel = styled.div`
@@ -16,7 +16,7 @@ const StyledPanel = styled.div`
     position: relative;
     transition: flex .7s ease-in;
 
-    &[data-active="true"] {
+    &.is-active {
         flex: 5;
 
         h3 {
@@ -41,19 +41,18 @@ const StyledPanelTitle = styled.h3`
     opacity: 0;
 `;
 
-const Panel = ({ id, url, heading, isActive, toggleActive }) => {
+const Panel = ({ id, url, heading, toggleActivePanel }, ref) => {
 
     return (
         <StyledPanel
             id={id}
-            data-active={isActive}
-            className="panel"
             key={id}
             url={url}
-            onClick={(e) => toggleActive(e)}>
+            ref={ref}
+            onClick={toggleActivePanel}>
             <StyledPanelTitle>
                 {heading}
-            </StyledPanelTitle>        
+            </StyledPanelTitle>
         </StyledPanel>
     );
 };
@@ -64,4 +63,4 @@ Panel.propTypes = {
     heading: PropTypes.string
 };
 
-export default Panel;
+export default forwardRef(Panel);

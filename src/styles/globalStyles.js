@@ -4,10 +4,8 @@ import { normalize } from 'styled-normalize';
 const GlobalStyle = createGlobalStyle` 
     ${normalize}
 
-    @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-
     * {
-    box-sizing: border-box;
+        box-sizing: border-box;
     }
 
     body {
