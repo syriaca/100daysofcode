@@ -11,7 +11,7 @@ const App = () => {
 
   const toggleActive = (e) => {
     const current = e.currentTarget.id;
-    
+
     panels.forEach(x => {
       if (x.id === current) {
        x.dataset.active = "true" 
@@ -28,15 +28,15 @@ const App = () => {
   return (
       <Container>
         {isLoading && <div>Is Loading...</div>}
-      {images && images.map(image =>
-        <Panel
-          id={image.id}
-          url={image.urls.small}
-          heading={image.alt_description}
-          toggleActive={toggleActive} 
-          isActive={false}
-          />
-      )}
+        {images && images.map(image =>
+          <Panel
+            id={image.id}
+            url={image.urls.small}
+            heading={image.alt_description}
+            toggleActive={toggleActive} 
+            isActive={false}
+            />
+        )}
       </Container>
   );
 }
