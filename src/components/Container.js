@@ -5,6 +5,10 @@ import styled from 'styled-components';
 const StyledContainer = styled.div`
     display: flex;
     width: 90vw;
+
+    @media (max-width: 480px) {
+        width: 100vw;
+    }
 `;
 
 const Container = props => {
