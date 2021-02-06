@@ -1,5 +1,6 @@
 import useFetch from './hook/useFetch';
 import Container from './components/Container';
+import Panel from './components/Panel';
 
 function App() {
   
@@ -8,18 +9,7 @@ function App() {
   return (
       <Container>
         {isLoading && <div>Is Loading...</div>}
-        {images && images.map(image => {
-            return (
-              <div
-                className="panel"
-                key={image.id}
-                style={{ backgroundImage: `url(${image.urls.small})` }}>
-                <h3>
-                  {image.alt_description}
-                </h3>
-              </div>
-            )}
-          )}
+        {images && images.map(image => <Panel key={image.id} url={image.urls.small} heading={image.alt_description} />)}
       </Container>
   );
 }
