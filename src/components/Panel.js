@@ -6,7 +6,7 @@ const StyledPanel = styled.div`
     background-image: ${props => `url(${props.url})`};
     background-position: center;
     background-repeat: no-repeat;
-    background-size: auto 100%;
+    background-size: cover;
     border-radius: 50px;
     height: 80vh;
     color: #fff;
@@ -16,7 +16,7 @@ const StyledPanel = styled.div`
     position: relative;
     transition: flex .7s ease-in;
 
-    &.active {
+    &[data-active="true"] {
         flex: 5;
 
         h3 {
@@ -41,10 +41,16 @@ const StyledPanelTitle = styled.h3`
     opacity: 0;
 `;
 
-const Panel = ({ key, url, heading }) => {
-    console.log(url);
+const Panel = ({ id, url, heading, isActive, toggleActive }) => {
+
     return (
-        <StyledPanel key={key} url={url}>
+        <StyledPanel
+            id={id}
+            data-active={isActive}
+            className="panel"
+            key={id}
+            url={url}
+            onClick={(e) => toggleActive(e)}>
             <StyledPanelTitle>
                 {heading}
             </StyledPanelTitle>        
@@ -53,7 +59,7 @@ const Panel = ({ key, url, heading }) => {
 };
 
 Panel.propTypes = {
-    key: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
     heading: PropTypes.string.isRequired
 };
